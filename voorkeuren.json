@@ -38,6 +38,19 @@
     "vomar": null,
     "lidl": null
    }
+  },
+  {
+   "id": "oude-kaas",
+   "naam": "Oude kaas",
+   "zoekterm": "oude kaas",
+   "voorkeur": "merk",
+   "merk": "Old Amsterdam",
+   "opmerking": null,
+   "artikelen": {
+    "ah": null,
+    "vomar": null,
+    "lidl": null
+   }
   }
  ]
 }
