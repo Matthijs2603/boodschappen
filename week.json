@@ -10,7 +10,7 @@
   "2026-11-13",
   "2026-11-14"
  ],
- "gemaakt_op": "2026-11-08T00:12:58",
+ "gemaakt_op": "2026-11-08T00:43:02",
  "folders": [
   {
    "id": "lidl-hah-wk45-2026",
@@ -308,7 +308,10 @@
    "opmerking": "De gewone Calvé, niet de 100%-variant.",
    "artikelen": {
     "ah": null,
-    "vomar": null,
+    "vomar": {
+     "naam": "Calve Pindakaas",
+     "inhoud": "650 gram"
+    },
     "lidl": null
    },
    "kandidaten": {
@@ -462,24 +465,6 @@
       }
      },
      {
-      "naam": "Calvé pindakaas",
-      "inhoud": "650 g",
-      "prijs": 4.35,
-      "per_eenheid": {
-       "prijs": 6.69,
-       "per": "kg"
-      }
-     },
-     {
-      "naam": "Calve pindakaas 1kg",
-      "inhoud": "1 kg",
-      "prijs": 6.69,
-      "per_eenheid": {
-       "prijs": 6.69,
-       "per": "kg"
-      }
-     },
-     {
       "naam": "Calve pindakaas 1kg",
       "inhoud": "1 kg",
       "prijs": 6.69,
@@ -510,7 +495,7 @@
    },
    "gekozen_gevonden": {
     "ah": null,
-    "vomar": null,
+    "vomar": true,
     "lidl": null
    },
    "dagen": {
@@ -527,7 +512,7 @@
        "aanbieding": false
       },
       "vomar": {
-       "artikel": "Calve Pindakaas Stukjes",
+       "artikel": "Calve Pindakaas",
        "inhoud": "650 gram",
        "prijs": 3.79,
        "per_eenheid": {
@@ -571,7 +556,7 @@
        "aanbieding": false
       },
       "vomar": {
-       "artikel": "Calve Pindakaas Stukjes",
+       "artikel": "Calve Pindakaas",
        "inhoud": "650 gram",
        "prijs": 3.79,
        "per_eenheid": {
@@ -615,7 +600,7 @@
        "aanbieding": false
       },
       "vomar": {
-       "artikel": "Calve Pindakaas Stukjes",
+       "artikel": "Calve Pindakaas",
        "inhoud": "650 gram",
        "prijs": 3.79,
        "per_eenheid": {
@@ -659,7 +644,7 @@
        "aanbieding": false
       },
       "vomar": {
-       "artikel": "Calve Pindakaas Stukjes",
+       "artikel": "Calve Pindakaas",
        "inhoud": "650 gram",
        "prijs": 3.79,
        "per_eenheid": {
@@ -703,7 +688,7 @@
        "aanbieding": false
       },
       "vomar": {
-       "artikel": "Calve Pindakaas Stukjes",
+       "artikel": "Calve Pindakaas",
        "inhoud": "650 gram",
        "prijs": 3.79,
        "per_eenheid": {
@@ -743,7 +728,7 @@
        "aanbieding": false
       },
       "vomar": {
-       "artikel": "Calve Pindakaas Stukjes",
+       "artikel": "Calve Pindakaas",
        "inhoud": "650 gram",
        "prijs": 3.79,
        "per_eenheid": {
@@ -783,7 +768,7 @@
        "aanbieding": false
       },
       "vomar": {
-       "artikel": "Calve Pindakaas Stukjes",
+       "artikel": "Calve Pindakaas",
        "inhoud": "650 gram",
        "prijs": 3.79,
        "per_eenheid": {
@@ -1241,6 +1226,94 @@
       }
      },
      "beste": "lidl",
+     "wacht": null
+    }
+   }
+  },
+  {
+   "id": "oude-kaas",
+   "naam": "Oude kaas",
+   "zoekterm": "oude kaas",
+   "voorkeur": "merk",
+   "merk": "Old Amsterdam",
+   "opmerking": null,
+   "artikelen": {
+    "ah": null,
+    "vomar": null,
+    "lidl": null
+   },
+   "kandidaten": {
+    "ah": [],
+    "vomar": [],
+    "lidl": []
+   },
+   "gekozen_gevonden": {
+    "ah": null,
+    "vomar": null,
+    "lidl": null
+   },
+   "dagen": {
+    "2026-11-08": {
+     "winkels": {
+      "ah": null,
+      "vomar": null,
+      "lidl": null
+     },
+     "beste": null,
+     "wacht": null
+    },
+    "2026-11-09": {
+     "winkels": {
+      "ah": null,
+      "vomar": null,
+      "lidl": null
+     },
+     "beste": null,
+     "wacht": null
+    },
+    "2026-11-10": {
+     "winkels": {
+      "ah": null,
+      "vomar": null,
+      "lidl": null
+     },
+     "beste": null,
+     "wacht": null
+    },
+    "2026-11-11": {
+     "winkels": {
+      "ah": null,
+      "vomar": null,
+      "lidl": null
+     },
+     "beste": null,
+     "wacht": null
+    },
+    "2026-11-12": {
+     "winkels": {
+      "ah": null,
+      "vomar": null,
+      "lidl": null
+     },
+     "beste": null,
+     "wacht": null
+    },
+    "2026-11-13": {
+     "winkels": {
+      "ah": null,
+      "vomar": null,
+      "lidl": null
+     },
+     "beste": null,
+     "wacht": null
+    },
+    "2026-11-14": {
+     "winkels": {
+      "ah": null,
+      "vomar": null,
+      "lidl": null
+     },
+     "beste": null,
      "wacht": null
     }
    }

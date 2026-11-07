@@ -139,6 +139,10 @@ const stip = w => h("span", { class: `stip ${w}` });
 const norm = t => (t || "").normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/'/g, "");
 function b64naarTekst(b64) { return new TextDecoder().decode(Uint8Array.from(atob(b64.replace(/\s/g, "")), c => c.charCodeAt(0))); }
 function tekstNaarB64(t) { let s = ""; for (const b of new TextEncoder().encode(t)) s += String.fromCharCode(b); return btoa(s); }
+// een gekozen artikel is {naam, inhoud}; een losse naam is de oude vorm
+const artikelTekst = a => typeof a === "object" && a ? [a.naam, a.inhoud].filter(Boolean).join(" · ") : a;
+const zelfdeArtikel = (a, c) => !!a && a !== "-" && norm(typeof a === "object" ? a.naam : a) === norm(c.naam) &&
+  (typeof a !== "object" || !a.inhoud || norm(a.inhoud) === norm(c.inhoud));
 function slug(t) { return norm(t).replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "product"; }
 
 // ---------- laden ----------
@@ -331,7 +335,7 @@ function renderProducten() {
       const weg = p.week?.gekozen_gevonden?.[wk] === false;
       lijstEl.append(h("div", { class: "klein" }, stip(wk),
         a === "-" ? h("span", { class: "zacht" }, "niet bij deze winkel") :
-        a ? h("span", {}, a, weg ? h("span", { class: "fout" }, " (niet meer gevonden)") : null) :
+        a ? h("span", {}, artikelTekst(a), weg ? h("span", { class: "fout" }, " (niet meer gevonden)") : null) :
         h("span", { class: "zacht" }, "automatisch het goedkoopste")));
     }
     kaart.append(lijstEl);
@@ -381,13 +385,14 @@ function formulier(b) {
   else if (p.status === "bijwerken") f.append(h("p", { class: "zacht klein" },
     "Je hebt het zoekwoord of merk net aangepast. De nieuwe artikelen verschijnen over een paar minuten."));
   for (const wk of WINKELS) {
-    const huidig = (p.artikelen || {})[wk] || "";
+    const huidig = (p.artikelen || {})[wk] || null;
     const kand = p.week?.kandidaten?.[wk] || [];
+    const gevonden = kand.find(c => zelfdeArtikel(huidig, c));
     const sel = h("select", { name: `artikel-${wk}`, id: `f-${wk}` },
       h("option", { value: "", selected: !huidig }, "Automatisch het goedkoopste"),
-      kand.map(c => h("option", { value: c.naam, selected: huidig === c.naam },
+      kand.map(c => h("option", { value: JSON.stringify({ naam: c.naam, inhoud: c.inhoud || null }), selected: c === gevonden },
         [c.naam, c.inhoud, c.prijs != null ? euro(c.prijs) : null, c.per_eenheid ? perE(c.per_eenheid) : null].filter(Boolean).join(" · "))),
-      huidig && huidig !== "-" && !kand.some(c => c.naam === huidig) ? h("option", { value: huidig, selected: true }, huidig) : null,
+      huidig && huidig !== "-" && !gevonden ? h("option", { value: JSON.stringify(huidig), selected: true }, artikelTekst(huidig)) : null,
       h("option", { value: "-", selected: huidig === "-" }, "Niet bij deze winkel"));
     f.append(h("label", { for: `f-${wk}` }, stip(wk), WINKELNAAM[wk]), sel);
   }
@@ -403,7 +408,10 @@ async function opslaan(b, f) {
   const nieuw = {
     naam: e.naam.value.trim(), zoekterm: e.zoekterm.value.trim().toLowerCase(), voorkeur: e.voorkeur.value,
     merk: e.voorkeur.value === "merk" ? e.merk.value.trim() : null, opmerking: e.opmerking.value.trim() || null,
-    artikelen: Object.fromEntries(WINKELS.map(wk => [wk, e[`artikel-${wk}`].value || null])),
+    artikelen: Object.fromEntries(WINKELS.map(wk => {
+      const w = e[`artikel-${wk}`].value;
+      return [wk, !w ? null : w === "-" ? "-" : JSON.parse(w)];
+    })),
   };
   if (!nieuw.naam || !nieuw.zoekterm) return;
   if (nieuw.voorkeur === "merk" && !nieuw.merk) { alert("Vul het merk in."); return; }
@@ -418,7 +426,8 @@ async function opslaan(b, f) {
       // bij een ander zoekwoord of merk passen de gekozen artikelen niet meer
       const oud = data.producten[i];
       if (oud.zoekterm !== nieuw.zoekterm || oud.voorkeur !== nieuw.voorkeur || (oud.merk || "") !== (nieuw.merk || ""))
-        for (const wk of WINKELS) if (nieuw.artikelen[wk] && nieuw.artikelen[wk] !== "-" && nieuw.artikelen[wk] === oud.artikelen?.[wk]) nieuw.artikelen[wk] = null;
+        for (const wk of WINKELS) if (nieuw.artikelen[wk] && nieuw.artikelen[wk] !== "-" &&
+          JSON.stringify(nieuw.artikelen[wk]) === JSON.stringify(oud.artikelen?.[wk])) nieuw.artikelen[wk] = null;
       data.producten[i] = { id: b.id, ...nieuw };
     }
   }, `${b.nieuw ? "Toegevoegd" : "Aangepast"}: ${nieuw.naam}`);
