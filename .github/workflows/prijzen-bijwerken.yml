@@ -1,0 +1,21 @@
+# Zodra voorkeuren.json verandert (bijvoorbeeld via de pagina), maakt de workflow in
+# Matthijs2603/het-mainframe het weekbestand opnieuw, zodat de prijzen kloppen.
+name: Prijzen bijwerken na wijziging
+
+on:
+  push:
+    branches: [main]
+    paths: [voorkeuren.json]
+
+permissions: {}
+
+jobs:
+  start:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Weekbestand opnieuw laten maken
+        env:
+          GH_TOKEN: ${{ secrets.MAINFRAME_ACTIONS_TOKEN }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then echo "Secret MAINFRAME_ACTIONS_TOKEN ontbreekt"; exit 1; fi
+          gh workflow run boodschappen-week.yml -R Matthijs2603/het-mainframe

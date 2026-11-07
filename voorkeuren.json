@@ -1,0 +1,31 @@
+{
+ "producten": [
+  {
+   "id": "chocos",
+   "naam": "Chocos",
+   "zoekterm": "chocos",
+   "voorkeur": "merk",
+   "merk": "Kellogg's",
+   "opmerking": "Kellogg's Chocos, 330 g. Bij AH heet hij \"Coco Pops Chocos\". Niet de gewone Coco Pops.",
+   "artikelen": {"ah": null, "vomar": null, "lidl": null}
+  },
+  {
+   "id": "pindakaas",
+   "naam": "Pindakaas",
+   "zoekterm": "pindakaas",
+   "voorkeur": "merk",
+   "merk": "Calvé",
+   "opmerking": "De gewone Calvé, niet de 100%-variant.",
+   "artikelen": {"ah": null, "vomar": null, "lidl": null}
+  },
+  {
+   "id": "halfvolle-yoghurt",
+   "naam": "Halfvolle yoghurt",
+   "zoekterm": "yoghurt halfvol",
+   "voorkeur": "geen",
+   "merk": null,
+   "opmerking": "Wel biologisch.",
+   "artikelen": {"ah": null, "vomar": null, "lidl": null}
+  }
+ ]
+}
