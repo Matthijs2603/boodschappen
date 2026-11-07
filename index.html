@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Boodschappen</title>
+<style>
+  :root { --bg: #faf8f4; --tekst: #222; --zacht: #666; --kaart: #fff; --lijn: #e6e1d8; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #161616; --tekst: #eee; --zacht: #aaa; --kaart: #222; --lijn: #333; } }
+  body { margin: 0; padding: 24px 16px; background: var(--bg); color: var(--tekst);
+         font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 480px; margin: 0 auto; }
+  .kaart { background: var(--kaart); border: 1px solid var(--lijn); border-radius: 12px; padding: 16px; }
+  p.zacht { color: var(--zacht); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Boodschappen</h1>
+  <p class="zacht">De echte pagina komt eraan. Hieronder staat wat er deze week klaarstaat.</p>
+  <div class="kaart" id="status">Even laden…</div>
+</main>
+<script>
+fetch("week.json", { cache: "no-store" })
+  .then(r => r.json())
+  .then(w => {
+    const tel = {};
+    w.aanbiedingen.forEach(a => tel[a.winkel] = (tel[a.winkel] || 0) + 1);
+    const datum = d => new Date(d).toLocaleDateString("nl-NL", { weekday: "long", day: "numeric", month: "long" });
+    document.getElementById("status").innerHTML =
+      `<strong>Aanbiedingen van ${datum(w.datum)} t/m ${datum(w.tot)}</strong><br>` +
+      `Albert Heijn: ${tel.ah || 0} (alleen vaste producten)<br>Lidl: ${tel.lidl || 0}<br>Vomar: ${tel.vomar || 0}<br>` +
+      `<span class="zacht">Bijgewerkt op ${new Date(w.gemaakt_op).toLocaleString("nl-NL")}</span>`;
+  })
+  .catch(() => document.getElementById("status").textContent = "Er is nog geen weekbestand.");
+</script>
+</body>
+</html>
