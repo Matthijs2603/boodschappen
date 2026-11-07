@@ -22,7 +22,10 @@
    "opmerking": "De gewone Calvé, niet de 100%-variant.",
    "artikelen": {
     "ah": null,
-    "vomar": null,
+    "vomar": {
+     "naam": "Calve Pindakaas",
+     "inhoud": "650 gram"
+    },
     "lidl": null
    }
   },
