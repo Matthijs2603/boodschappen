@@ -2,38 +2,527 @@
 <html lang="nl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex">
+<meta name="theme-color" content="#2f6b4f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Boodschappen">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛒</text></svg>">
 <title>Boodschappen</title>
 <style>
-  :root { --bg: #faf8f4; --tekst: #222; --zacht: #666; --kaart: #fff; --lijn: #e6e1d8; }
-  @media (prefers-color-scheme: dark) { :root { --bg: #161616; --tekst: #eee; --zacht: #aaa; --kaart: #222; --lijn: #333; } }
-  body { margin: 0; padding: 24px 16px; background: var(--bg); color: var(--tekst);
-         font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
-  main { max-width: 480px; margin: 0 auto; }
-  .kaart { background: var(--kaart); border: 1px solid var(--lijn); border-radius: 12px; padding: 16px; }
-  p.zacht { color: var(--zacht); }
+  :root {
+    --bg: #f6f4ef; --kaart: #ffffff; --tekst: #1f2421; --zacht: #6b716d; --lijn: #e4e0d7;
+    --accent: #2f6b4f; --accent-zacht: #e3efe8; --let-op: #8a5a00; --let-op-bg: #fff4dc;
+    --fout: #a1281b; --ah: #00a0e2; --vomar: #e30613; --lidl: #0050aa;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #121413; --kaart: #1c1f1d; --tekst: #ecefed; --zacht: #9aa19d; --lijn: #2c312e;
+            --accent: #7cc4a0; --accent-zacht: #1f3329; --let-op: #f2c46b; --let-op-bg: #33290f; --fout: #ff8a7a; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--tekst);
+         font: 16px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; -webkit-text-size-adjust: 100%; }
+  main { max-width: 560px; margin: 0 auto; padding: 12px 16px 96px; }
+  header { padding: 16px 16px 4px; max-width: 560px; margin: 0 auto; }
+  h1 { font-size: 24px; margin: 0; }
+  h2 { font-size: 18px; margin: 20px 0 8px; }
+  .zacht { color: var(--zacht); font-size: 14px; }
+  .klein { font-size: 13px; }
+  nav { position: fixed; bottom: 0; left: 0; right: 0; background: var(--kaart); border-top: 1px solid var(--lijn);
+        display: flex; justify-content: center; padding-bottom: env(safe-area-inset-bottom); z-index: 5; }
+  nav button { flex: 1; max-width: 187px; background: none; border: 0; padding: 10px 4px 12px; font: inherit;
+               font-size: 14px; color: var(--zacht); }
+  nav button[aria-current="true"] { color: var(--accent); font-weight: 600; }
+  nav span { display: block; font-size: 20px; }
+  .kaart { background: var(--kaart); border: 1px solid var(--lijn); border-radius: 14px; padding: 14px; margin: 10px 0; }
+  .melding { background: var(--let-op-bg); color: var(--let-op); border-radius: 12px; padding: 12px 14px; margin: 10px 0; }
+  .fout { color: var(--fout); }
+  .chips { display: flex; gap: 8px; overflow-x: auto; padding: 4px 0 8px; scrollbar-width: none; }
+  .chip { flex: none; border: 1px solid var(--lijn); background: var(--kaart); color: var(--tekst); border-radius: 999px;
+          padding: 7px 14px; font: inherit; font-size: 14px; }
+  .chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+  @media (prefers-color-scheme: dark) { .chip[aria-pressed="true"] { color: #10251b; } }
+  .rij { display: flex; gap: 12px; align-items: flex-start; padding: 12px 0; border-top: 1px solid var(--lijn); }
+  .rij:first-child { border-top: 0; }
+  .rij input[type=checkbox] { width: 22px; height: 22px; margin: 2px 0 0; accent-color: var(--accent); flex: none; }
+  .rij .midden { flex: 1; min-width: 0; }
+  .naam { font-weight: 600; }
+  .prijzen { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; }
+  .prijs { font-size: 13px; border-radius: 8px; padding: 3px 8px; background: var(--bg); white-space: nowrap; }
+  .prijs.beste { background: var(--accent-zacht); color: var(--accent); font-weight: 600; }
+  .stip { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; vertical-align: 1px; }
+  .ah { background: var(--ah); } .vomar { background: var(--vomar); } .lidl { background: var(--lidl); }
+  .briefje h3 { margin: 0 0 6px; font-size: 16px; display: flex; justify-content: space-between; }
+  .regel { display: flex; justify-content: space-between; gap: 12px; padding: 6px 0; border-top: 1px dashed var(--lijn); }
+  .regel:first-of-type { border-top: 0; }
+  .regel > div:first-child, .naam, .midden { min-width: 0; overflow-wrap: anywhere; }
+  tr:first-child td { border-top: 0; }
+  select { text-overflow: ellipsis; }
+  .actie { color: var(--accent); font-weight: 600; }
+  .knop { display: inline-block; border: 0; border-radius: 10px; padding: 10px 16px; font: inherit; font-weight: 600;
+          background: var(--accent); color: #fff; }
+  @media (prefers-color-scheme: dark) { .knop { color: #10251b; } }
+  .knop.licht { background: var(--accent-zacht); color: var(--accent); }
+  .knop.rood { background: none; color: var(--fout); padding-left: 0; }
+  .knoppen { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-top: 14px; }
+  label { display: block; font-weight: 600; margin: 14px 0 4px; }
+  input[type=text], input[type=search], select, textarea {
+    width: 100%; font: inherit; padding: 10px 12px; border-radius: 10px; border: 1px solid var(--lijn);
+    background: var(--kaart); color: var(--tekst); }
+  textarea { min-height: 64px; }
+  .keuze label { font-weight: 400; display: flex; gap: 8px; align-items: center; margin: 6px 0; }
+  .keuze input { width: 20px; height: 20px; accent-color: var(--accent); }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  td { padding: 6px 0; border-top: 1px solid var(--lijn); }
+  td:last-child { text-align: right; }
+  .verborgen { display: none; }
 </style>
 </head>
 <body>
-<main>
+<header>
   <h1>Boodschappen</h1>
-  <p class="zacht">De echte pagina komt eraan. Hieronder staat wat er deze week klaarstaat.</p>
-  <div class="kaart" id="status">Even laden…</div>
+  <div class="zacht" id="kop">Even laden…</div>
+</header>
+<main>
+  <section id="tab-lijstje"></section>
+  <section id="tab-producten" class="verborgen"></section>
+  <section id="tab-aanbiedingen" class="verborgen"></section>
 </main>
+<nav>
+  <button data-tab="lijstje" aria-current="true"><span>📝</span>Lijstje</button>
+  <button data-tab="producten"><span>🧺</span>Producten</button>
+  <button data-tab="aanbiedingen"><span>🏷️</span>Aanbiedingen</button>
+</nav>
 <script>
-fetch("week.json", { cache: "no-store" })
-  .then(r => r.json())
-  .then(w => {
-    const tel = {};
-    w.aanbiedingen.forEach(a => tel[a.winkel] = (tel[a.winkel] || 0) + 1);
-    const datum = d => new Date(d).toLocaleDateString("nl-NL", { weekday: "long", day: "numeric", month: "long" });
-    document.getElementById("status").innerHTML =
-      `<strong>Aanbiedingen van ${datum(w.datum)} t/m ${datum(w.tot)}</strong><br>` +
-      `Albert Heijn: ${tel.ah || 0} (alleen vaste producten)<br>Lidl: ${tel.lidl || 0}<br>Vomar: ${tel.vomar || 0}<br>` +
-      `<span class="zacht">Bijgewerkt op ${new Date(w.gemaakt_op).toLocaleString("nl-NL")}</span>`;
-  })
-  .catch(() => document.getElementById("status").textContent = "Er is nog geen weekbestand.");
+"use strict";
+const REPO = "Matthijs2603/boodschappen";
+const API = `https://api.github.com/repos/${REPO}/contents/voorkeuren.json`;
+const WINKELS = ["ah", "vomar", "lidl"];
+const WINKELNAAM = { ah: "Albert Heijn", vomar: "Vomar", lidl: "Lidl" };
+const VOORKEURNAAM = { geen: "Maakt niet uit", huismerk: "Huismerk", merk: "Vast merk" };
+
+const st = { week: null, vk: null, sha: null, dag: null, tab: "lijstje", bewerk: null, bericht: null, zoek: "", zoekWinkel: "" };
+
+// ---------- opslag op dit toestel ----------
+function bewaarLokaal(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+function leesLokaal(k, standaard) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : standaard; } catch (e) { return standaard; } }
+let sleutel = leesLokaal("sleutel", null);
+let lijst = new Set(leesLokaal("lijstje", []));
+
+// eenmalig instellen via een link: …/boodschappen/#sleutel=github_pat_…
+(function () {
+  const m = location.hash.match(/sleutel=([A-Za-z0-9_]+)/);
+  if (m) { sleutel = m[1]; bewaarLokaal("sleutel", sleutel); history.replaceState(null, "", location.pathname); }
+})();
+
+// ---------- hulpjes ----------
+function h(tag, props, ...kids) {
+  const e = document.createElement(tag);
+  for (const [k, v] of Object.entries(props || {})) {
+    if (v === null || v === undefined || v === false) continue;
+    if (k === "class") e.className = v;
+    else if (k.startsWith("on")) e.addEventListener(k.slice(2), v);
+    else if (["checked", "value", "selected", "disabled"].includes(k)) e[k] = v;
+    else e.setAttribute(k, v);
+  }
+  for (const c of kids.flat()) if (c !== null && c !== undefined && c !== false) e.append(c instanceof Node ? c : String(c));
+  return e;
+}
+const euroFmt = new Intl.NumberFormat("nl-NL", { style: "currency", currency: "EUR" });
+const euro = n => euroFmt.format(n);
+const perE = pe => pe ? `${euro(pe.prijs)}/${pe.per}` : "";
+const datumVan = iso => new Date(iso + "T12:00:00");
+const dagNaam = iso => datumVan(iso).toLocaleDateString("nl-NL", { weekday: "long", day: "numeric", month: "long" });
+const dagKort = iso => datumVan(iso).toLocaleDateString("nl-NL", { weekday: "short", day: "numeric" });
+const vandaag = () => new Date().toLocaleDateString("sv-SE");
+const stip = w => h("span", { class: `stip ${w}` });
+const norm = t => (t || "").normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/'/g, "");
+function b64naarTekst(b64) { return new TextDecoder().decode(Uint8Array.from(atob(b64.replace(/\s/g, "")), c => c.charCodeAt(0))); }
+function tekstNaarB64(t) { let s = ""; for (const b of new TextEncoder().encode(t)) s += String.fromCharCode(b); return btoa(s); }
+function slug(t) { return norm(t).replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "product"; }
+
+// ---------- laden ----------
+async function laadWeek() {
+  const r = await fetch("week.json", { cache: "no-store" });
+  if (!r.ok) throw new Error("Er is nog geen weekbestand.");
+  st.week = await r.json();
+}
+async function laadVoorkeuren() {
+  const headers = { Accept: "application/vnd.github+json" };
+  if (sleutel) headers.Authorization = `Bearer ${sleutel}`;
+  const r = await fetch(API + `?t=${Date.now()}`, { headers, cache: "no-store" });
+  if (r.status === 404) { st.vk = { producten: [] }; st.sha = null; return; }
+  if (!r.ok) throw new Error(`voorkeuren niet geladen (${r.status})`);
+  const j = await r.json();
+  st.sha = j.sha;
+  st.vk = JSON.parse(b64naarTekst(j.content));
+}
+async function laadAlles() {
+  try { await laadWeek(); } catch (e) { st.fout = e.message; }
+  try { await laadVoorkeuren(); }
+  catch (e) {
+    // terugval: de voorkeuren zoals ze in het weekbestand staan
+    st.vk = { producten: (st.week?.producten || []).map(p => ({ id: p.id, naam: p.naam, zoekterm: p.zoekterm, voorkeur: p.voorkeur,
+      merk: p.merk, opmerking: p.opmerking, artikelen: p.artikelen || {} })) };
+    st.vkFout = true;
+  }
+  const dagen = st.week?.dagen || [];
+  st.dag = dagen.includes(vandaag()) ? vandaag() : (dagen[0] || vandaag());
+  render();
+}
+
+// combineer de voorkeur (actueel) met de berekening uit het weekbestand
+function producten() {
+  const perId = Object.fromEntries((st.week?.producten || []).map(p => [p.id, p]));
+  return (st.vk?.producten || []).map(v => {
+    const w = perId[v.id];
+    let status = "ok";
+    if (!w || !w.dagen) status = "nieuw";
+    else if (w.zoekterm !== v.zoekterm || w.voorkeur !== v.voorkeur || (w.merk || "") !== (v.merk || "") ||
+             JSON.stringify(w.artikelen || {}) !== JSON.stringify(v.artikelen || {})) status = "bijwerken";
+    return { ...v, week: w, status };
+  });
+}
+
+// ---------- weergave ----------
+function render() {
+  const w = st.week;
+  const kop = document.getElementById("kop");
+  kop.textContent = w ? `Advies t/m ${dagNaam(w.dagen.at(-1))} · bijgewerkt ${new Date(w.gemaakt_op).toLocaleString("nl-NL",
+    { weekday: "short", hour: "2-digit", minute: "2-digit" })}` : (st.fout || "");
+  for (const t of ["lijstje", "producten", "aanbiedingen"]) {
+    document.getElementById(`tab-${t}`).classList.toggle("verborgen", st.tab !== t);
+    document.querySelector(`nav button[data-tab=${t}]`).setAttribute("aria-current", st.tab === t);
+  }
+  if (st.tab === "lijstje") renderLijstje();
+  if (st.tab === "producten") renderProducten();
+  if (st.tab === "aanbiedingen") renderAanbiedingen();
+}
+
+function berichtBlok() {
+  if (!st.bericht) return null;
+  return h("div", { class: st.bericht.fout ? "melding fout" : "melding" }, st.bericht.tekst);
+}
+
+function renderLijstje() {
+  const el = document.getElementById("tab-lijstje");
+  el.replaceChildren();
+  const w = st.week;
+  el.append(berichtBlok() || "");
+  if (!w) { el.append(h("p", {}, st.fout || "Nog geen gegevens.")); return; }
+  if (w.dagen.at(-1) < vandaag()) el.append(h("div", { class: "melding" }, "Let op: deze gegevens zijn verouderd. De update van vanochtend is waarschijnlijk niet gelukt."));
+
+  el.append(h("div", { class: "chips" }, w.dagen.map(d => h("button", {
+    class: "chip", "aria-pressed": d === st.dag, onclick: () => { st.dag = d; render(); }
+  }, d === vandaag() ? "Vandaag" : dagKort(d)))));
+
+  const alle = producten();
+  const gekozen = alle.filter(p => lijst.has(p.id));
+
+  if (gekozen.length) el.append(advies(gekozen));
+
+  el.append(h("h2", {}, gekozen.length ? "Alle producten" : "Wat heb je nodig?"));
+  if (!alle.length) el.append(h("p", { class: "zacht" }, "Er staan nog geen producten in. Voeg ze toe bij Producten."));
+  const kaart = h("div", { class: "kaart" });
+  for (const p of alle) {
+    const dag = p.week?.dagen?.[st.dag];
+    const prijzen = dag ? h("div", { class: "prijzen" }, WINKELS.map(wk => {
+      const o = dag.winkels[wk];
+      return h("span", { class: "prijs" + (dag.beste === wk ? " beste" : "") }, stip(wk), o ? euro(o.prijs) : "–");
+    })) : null;
+    const id = `p-${p.id}`;
+    kaart.append(h("label", { class: "rij", for: id, style: "font-weight:400;margin:0" },
+      h("input", { type: "checkbox", id, checked: lijst.has(p.id), onchange: e => {
+        e.target.checked ? lijst.add(p.id) : lijst.delete(p.id);
+        bewaarLokaal("lijstje", [...lijst]); render();
+      } }),
+      h("div", { class: "midden" },
+        h("div", { class: "naam" }, p.naam),
+        p.status === "nieuw" ? h("div", { class: "zacht klein" }, "Nieuw, de prijzen komen er zo aan.") :
+        p.status === "bijwerken" ? h("div", { class: "zacht klein" }, "Je wijziging wordt zo verwerkt.") : null,
+        prijzen)));
+  }
+  el.append(kaart);
+  if (gekozen.length) el.append(h("div", { class: "knoppen" }, h("button", { class: "knop licht", onclick: () => {
+    lijst.clear(); bewaarLokaal("lijstje", []); render(); } }, "Lijstje leegmaken")));
+}
+
+function advies(gekozen) {
+  const blok = h("div", {});
+  // wachten loont
+  for (const p of gekozen) {
+    const wacht = p.week?.dagen?.[st.dag]?.wacht;
+    if (wacht) blok.append(h("div", { class: "melding" },
+      h("strong", {}, `Wacht met ${p.naam.toLowerCase()}: `),
+      `vanaf ${dagNaam(wacht.dag)} bij ${WINKELNAAM[wacht.winkel]} ${euro(wacht.prijs)}`,
+      wacht.actie ? ` (${wacht.actie})` : "", wacht.voorwaarde ? `, ${wacht.voorwaarde}` : "",
+      `. Je bespaart ${euro(wacht.besparing)}.`));
+  }
+  // briefjes per winkel
+  const perWinkel = {}, nergens = [], onbekend = [];
+  for (const p of gekozen) {
+    const dag = p.week?.dagen?.[st.dag];
+    if (!dag) { onbekend.push(p); continue; }
+    if (!dag.beste) { nergens.push(p); continue; }
+    (perWinkel[dag.beste] ||= []).push({ p, o: dag.winkels[dag.beste] });
+  }
+  blok.append(h("h2", {}, `Waar haal je het, ${st.dag === vandaag() ? "vandaag" : dagNaam(st.dag)}?`));
+  for (const wk of WINKELS) {
+    const regels = perWinkel[wk];
+    if (!regels) continue;
+    let totaal = 0;
+    const kaart = h("div", { class: "kaart briefje" });
+    const lijstEl = [];
+    for (const { p, o } of regels) {
+      const aantal = o.vanaf_aantal > 1 ? o.vanaf_aantal : 1;
+      totaal += o.prijs * aantal;
+      lijstEl.push(h("div", { class: "regel" },
+        h("div", {},
+          h("div", {}, p.naam),
+          h("div", { class: "zacht klein" }, [o.artikel, o.inhoud].filter(Boolean).join(" · ")),
+          o.aanbieding ? h("div", { class: "klein actie" }, [o.actie || "Aanbieding", o.voorwaarde,
+            aantal > 1 ? `neem er ${aantal}` : null, o.tot ? `t/m ${dagKort(o.tot)}` : null].filter(Boolean).join(" · ")) : null),
+        h("div", { style: "text-align:right;white-space:nowrap" },
+          h("div", {}, euro(o.prijs * aantal)),
+          o.per_eenheid ? h("div", { class: "zacht klein" }, perE(o.per_eenheid)) : null)));
+    }
+    kaart.append(h("h3", {}, h("span", {}, stip(wk), WINKELNAAM[wk]), h("span", {}, euro(totaal))), ...lijstEl);
+    blok.append(kaart);
+  }
+  if (nergens.length) blok.append(h("p", { class: "zacht" }, `Niet gevonden: ${nergens.map(p => p.naam).join(", ")}.`));
+  if (onbekend.length) blok.append(h("p", { class: "zacht" }, `Nog geen prijzen voor ${onbekend.map(p => p.naam).join(", ")}. Die komen er zo aan.`));
+
+  // alles bij één winkel
+  const tabel = h("table", {});
+  for (const wk of WINKELS) {
+    let som = 0, mist = 0;
+    for (const p of gekozen) {
+      const o = p.week?.dagen?.[st.dag]?.winkels?.[wk];
+      if (o) som += o.prijs * (o.vanaf_aantal > 1 ? o.vanaf_aantal : 1); else mist++;
+    }
+    tabel.append(h("tr", {}, h("td", {}, stip(wk), WINKELNAAM[wk], mist ? h("span", { class: "zacht klein" }, ` (${mist} niet te koop)`) : null),
+      h("td", {}, euro(som))));
+  }
+  blok.append(h("h2", {}, "Alles bij één winkel"), h("div", { class: "kaart" }, tabel));
+  return blok;
+}
+
+// ---------- producten beheren ----------
+function renderProducten() {
+  const el = document.getElementById("tab-producten");
+  el.replaceChildren();
+  el.append(berichtBlok() || "");
+  if (st.bewerk) { el.append(formulier(st.bewerk)); return; }
+  if (!sleutel) {
+    el.append(h("div", { class: "melding" }, "Je kunt hier kijken. Om producten aan te passen, moet deze telefoon één keer worden ingesteld.",
+      h("div", { class: "knoppen" }, h("button", { class: "knop licht", onclick: instellen }, "Instellen"))));
+  }
+  if (st.vkFout) el.append(h("div", { class: "melding" }, "De nieuwste productenlijst kon niet worden geladen. Je ziet de versie van vanochtend."));
+  if (sleutel && !st.vkFout) el.append(h("div", { class: "knoppen", style: "margin-top:0" },
+    h("button", { class: "knop", onclick: () => { st.bewerk = { nieuw: true }; st.bericht = null; render(); } }, "+ Product toevoegen")));
+  for (const p of producten()) {
+    const kaart = h("div", { class: "kaart" },
+      h("div", { class: "naam" }, p.naam),
+      h("div", { class: "zacht klein" }, p.voorkeur === "merk" ? `Merk: ${p.merk}` : VOORKEURNAAM[p.voorkeur],
+        p.opmerking ? ` · ${p.opmerking}` : ""));
+    const lijstEl = h("div", { style: "margin-top:8px" });
+    for (const wk of WINKELS) {
+      const a = (p.artikelen || {})[wk];
+      const weg = p.week?.gekozen_gevonden?.[wk] === false;
+      lijstEl.append(h("div", { class: "klein" }, stip(wk),
+        a === "-" ? h("span", { class: "zacht" }, "niet bij deze winkel") :
+        a ? h("span", {}, a, weg ? h("span", { class: "fout" }, " (niet meer gevonden)") : null) :
+        h("span", { class: "zacht" }, "automatisch het goedkoopste")));
+    }
+    kaart.append(lijstEl);
+    if (sleutel && !st.vkFout) kaart.append(h("div", { class: "knoppen" },
+      h("button", { class: "knop licht", onclick: () => { st.bewerk = { id: p.id }; st.bericht = null; render(); } }, "Aanpassen")));
+    el.append(kaart);
+  }
+  if (sleutel) el.append(h("p", { class: "zacht klein" }, "Deze telefoon is ingesteld om te wijzigen. ",
+    h("a", { href: "#", onclick: e => { e.preventDefault(); if (confirm("Sleutel van deze telefoon wissen?")) {
+      sleutel = null; bewaarLokaal("sleutel", null); render(); } } }, "Sleutel wissen")));
+}
+
+function instellen() {
+  const s = prompt("Plak hier de sleutel die je van Matthijs hebt gekregen:");
+  if (!s) return;
+  sleutel = s.trim(); bewaarLokaal("sleutel", sleutel);
+  laadVoorkeuren().then(() => { st.vkFout = false; st.bericht = { tekst: "Gelukt, deze telefoon is ingesteld." }; render(); })
+    .catch(() => { st.bericht = { tekst: "Die sleutel werkt niet. Controleer of je hem helemaal hebt geplakt.", fout: true };
+      sleutel = null; bewaarLokaal("sleutel", null); render(); });
+}
+
+function formulier(b) {
+  const p = b.nieuw ? { naam: "", zoekterm: "", voorkeur: "geen", merk: "", opmerking: "", artikelen: {} }
+                    : producten().find(x => x.id === b.id);
+  const f = h("form", { class: "kaart", onsubmit: e => { e.preventDefault(); opslaan(b, f); } });
+  f.append(h("h2", { style: "margin-top:0" }, b.nieuw ? "Nieuw product" : p.naam));
+  f.append(h("label", { for: "f-naam" }, "Naam"),
+    h("input", { type: "text", id: "f-naam", name: "naam", value: p.naam, required: true, placeholder: "bijvoorbeeld Pindakaas",
+      oninput: e => { const z = f.elements.zoekterm; if (b.nieuw && !z.dataset.zelf) z.value = e.target.value.toLowerCase(); } }));
+  f.append(h("label", { for: "f-zoek" }, "Zoekwoord"),
+    h("input", { type: "text", id: "f-zoek", name: "zoekterm", value: p.zoekterm, required: true,
+      oninput: e => { e.target.dataset.zelf = "1"; } }),
+    h("div", { class: "zacht klein" }, "Waarop we zoeken bij de winkels, zonder merk. Vindt Vomar niets? Draai de woorden dan om, zoals \"yoghurt halfvol\"."));
+  f.append(h("label", {}, "Welk merk?"),
+    h("div", { class: "keuze" }, ["geen", "huismerk", "merk"].map(v => h("label", {},
+      h("input", { type: "radio", name: "voorkeur", value: v, checked: p.voorkeur === v,
+        onchange: () => { f.elements.merk.parentElement.classList.toggle("verborgen", v !== "merk"); } }),
+      VOORKEURNAAM[v]))),
+    h("div", { class: p.voorkeur === "merk" ? "" : "verborgen" },
+      h("input", { type: "text", name: "merk", value: p.merk || "", placeholder: "bijvoorbeeld Calvé" })));
+  f.append(h("label", { for: "f-opm" }, "Opmerking (mag leeg)"),
+    h("textarea", { id: "f-opm", name: "opmerking" }, p.opmerking || ""));
+
+  f.append(h("h2", {}, "Welk artikel per winkel?"));
+  if (!p.week?.kandidaten) f.append(h("p", { class: "zacht klein" },
+    "De artikelen om uit te kiezen verschijnen een paar minuten nadat je het product hebt opgeslagen."));
+  else if (p.status === "bijwerken") f.append(h("p", { class: "zacht klein" },
+    "Je hebt het zoekwoord of merk net aangepast. De nieuwe artikelen verschijnen over een paar minuten."));
+  for (const wk of WINKELS) {
+    const huidig = (p.artikelen || {})[wk] || "";
+    const kand = p.week?.kandidaten?.[wk] || [];
+    const sel = h("select", { name: `artikel-${wk}`, id: `f-${wk}` },
+      h("option", { value: "", selected: !huidig }, "Automatisch het goedkoopste"),
+      kand.map(c => h("option", { value: c.naam, selected: huidig === c.naam },
+        [c.naam, c.inhoud, c.prijs != null ? euro(c.prijs) : null, c.per_eenheid ? perE(c.per_eenheid) : null].filter(Boolean).join(" · "))),
+      huidig && huidig !== "-" && !kand.some(c => c.naam === huidig) ? h("option", { value: huidig, selected: true }, huidig) : null,
+      h("option", { value: "-", selected: huidig === "-" }, "Niet bij deze winkel"));
+    f.append(h("label", { for: `f-${wk}` }, stip(wk), WINKELNAAM[wk]), sel);
+  }
+  f.append(h("div", { class: "knoppen" },
+    h("button", { class: "knop", type: "submit" }, "Opslaan"),
+    h("button", { class: "knop licht", type: "button", onclick: () => { st.bewerk = null; render(); } }, "Annuleren"),
+    b.nieuw ? null : h("button", { class: "knop rood", type: "button", onclick: () => verwijderen(p) }, "Verwijderen")));
+  return f;
+}
+
+async function opslaan(b, f) {
+  const e = f.elements;
+  const nieuw = {
+    naam: e.naam.value.trim(), zoekterm: e.zoekterm.value.trim().toLowerCase(), voorkeur: e.voorkeur.value,
+    merk: e.voorkeur.value === "merk" ? e.merk.value.trim() : null, opmerking: e.opmerking.value.trim() || null,
+    artikelen: Object.fromEntries(WINKELS.map(wk => [wk, e[`artikel-${wk}`].value || null])),
+  };
+  if (!nieuw.naam || !nieuw.zoekterm) return;
+  if (nieuw.voorkeur === "merk" && !nieuw.merk) { alert("Vul het merk in."); return; }
+  await bewaar(data => {
+    if (b.nieuw) {
+      let id = slug(nieuw.naam), n = 2;
+      while (data.producten.some(x => x.id === id)) id = `${slug(nieuw.naam)}-${n++}`;
+      data.producten.push({ id, ...nieuw });
+    } else {
+      const i = data.producten.findIndex(x => x.id === b.id);
+      if (i < 0) throw new Error("Dit product bestaat niet meer.");
+      // bij een ander zoekwoord of merk passen de gekozen artikelen niet meer
+      const oud = data.producten[i];
+      if (oud.zoekterm !== nieuw.zoekterm || oud.voorkeur !== nieuw.voorkeur || (oud.merk || "") !== (nieuw.merk || ""))
+        for (const wk of WINKELS) if (nieuw.artikelen[wk] && nieuw.artikelen[wk] !== "-" && nieuw.artikelen[wk] === oud.artikelen?.[wk]) nieuw.artikelen[wk] = null;
+      data.producten[i] = { id: b.id, ...nieuw };
+    }
+  }, `${b.nieuw ? "Toegevoegd" : "Aangepast"}: ${nieuw.naam}`);
+}
+
+async function verwijderen(p) {
+  if (!confirm(`${p.naam} verwijderen?`)) return;
+  lijst.delete(p.id); bewaarLokaal("lijstje", [...lijst]);
+  await bewaar(data => { data.producten = data.producten.filter(x => x.id !== p.id); }, `Verwijderd: ${p.naam}`);
+}
+
+async function bewaar(wijzig, bericht) {
+  st.bericht = { tekst: "Bezig met opslaan…" }; render();
+  try {
+    for (let poging = 0; poging < 3; poging++) {
+      await laadVoorkeuren();
+      const data = JSON.parse(JSON.stringify(st.vk));
+      data.producten ||= [];
+      wijzig(data);
+      const body = { message: bericht, content: tekstNaarB64(JSON.stringify(data, null, 1) + "\n") };
+      if (st.sha) body.sha = st.sha;
+      const r = await fetch(API, { method: "PUT", body: JSON.stringify(body), headers: {
+        Authorization: `Bearer ${sleutel}`, Accept: "application/vnd.github+json", "Content-Type": "application/json" } });
+      if (r.ok) {
+        st.sha = (await r.json()).content.sha; st.vk = data; st.bewerk = null;
+        st.bericht = { tekst: "Opgeslagen. Over een paar minuten zijn de prijzen bijgewerkt; deze pagina ververst dan vanzelf." };
+        render(); wachtOpNieuweWeek(); return;
+      }
+      if (r.status === 409 || r.status === 422) continue;
+      if (r.status === 401 || r.status === 403) throw new Error("De sleutel op deze telefoon werkt niet (meer). Vraag Matthijs om een nieuwe.");
+      throw new Error(`Opslaan lukte niet (${r.status}).`);
+    }
+    throw new Error("Opslaan lukte niet, probeer het zo nog eens.");
+  } catch (e) {
+    st.bericht = { tekst: e.message, fout: true }; render();
+  }
+}
+
+let wachtTimer = null;
+function wachtOpNieuweWeek() {
+  const sinds = st.week?.gemaakt_op;
+  let rondes = 0;
+  clearInterval(wachtTimer);
+  wachtTimer = setInterval(async () => {
+    if (++rondes > 30) { clearInterval(wachtTimer); return; }
+    try {
+      const r = await fetch("week.json", { cache: "no-store" });
+      const w = await r.json();
+      if (w.gemaakt_op !== sinds) {
+        clearInterval(wachtTimer); st.week = w;
+        st.bericht = { tekst: "De prijzen zijn bijgewerkt." }; render();
+      }
+    } catch (e) {}
+  }, 30000);
+}
+
+// ---------- aanbiedingen zoeken ----------
+function renderAanbiedingen() {
+  const el = document.getElementById("tab-aanbiedingen");
+  if (!el.firstChild) {
+    el.append(
+      h("input", { type: "search", id: "zoek", placeholder: "Zoek, bijvoorbeeld kaas of koffie", value: st.zoek,
+        oninput: e => { st.zoek = e.target.value; toonResultaten(); } }),
+      h("div", { class: "chips", id: "zoek-winkels", style: "margin-top:8px" }),
+      h("div", { id: "zoek-uit" }));
+  }
+  const chips = document.getElementById("zoek-winkels");
+  chips.replaceChildren(...["", ...WINKELS].map(wk => h("button", { class: "chip", "aria-pressed": st.zoekWinkel === wk,
+    onclick: () => { st.zoekWinkel = wk; renderAanbiedingen(); } }, wk ? WINKELNAAM[wk] : "Alle winkels")));
+  toonResultaten();
+}
+
+function toonResultaten() {
+  const uit = document.getElementById("zoek-uit");
+  uit.replaceChildren();
+  const w = st.week;
+  if (!w) return;
+  const woorden = norm(st.zoek).split(/\s+/).filter(Boolean);
+  if (!woorden.length) { uit.append(h("p", { class: "zacht" }, `${w.aanbiedingen.length} aanbiedingen deze week. Typ wat je zoekt.`)); return; }
+  const gevonden = w.aanbiedingen.filter(a => (!st.zoekWinkel || a.winkel === st.zoekWinkel) &&
+    woorden.every(z => norm([a.product, a.merk, a.omschrijving].join(" ")).includes(z)));
+  gevonden.sort((a, b) => (a.van || "").localeCompare(b.van || "") || a.prijs - b.prijs);
+  if (!gevonden.length) { uit.append(h("p", { class: "zacht" }, "Niets gevonden.")); return; }
+  const kaart = h("div", { class: "kaart" });
+  for (const a of gevonden.slice(0, 150)) {
+    const periode = a.van && a.van > vandaag() ? `vanaf ${dagNaam(a.van)}` : a.tot ? `t/m ${dagNaam(a.tot)}` : "";
+    kaart.append(h("div", { class: "regel" },
+      h("div", {},
+        h("div", {}, stip(a.winkel), [a.merk, a.product].filter(Boolean).join(" ")),
+        h("div", { class: "zacht klein" }, [a.inhoud, a.omschrijving].filter(Boolean).join(" · ")),
+        h("div", { class: "klein actie" }, [a.actie, a.voorwaarde, periode].filter(Boolean).join(" · "))),
+      h("div", { style: "text-align:right;white-space:nowrap" },
+        h("div", {}, euro(a.prijs)),
+        a.van_prijs ? h("div", { class: "zacht klein", style: "text-decoration:line-through" }, euro(a.van_prijs)) : null)));
+  }
+  uit.append(kaart);
+  if (gevonden.length > 150) uit.append(h("p", { class: "zacht klein" }, `En nog ${gevonden.length - 150}. Zoek iets specifieker.`));
+}
+
+// ---------- start ----------
+document.querySelectorAll("nav button").forEach(b => b.addEventListener("click", () => {
+  st.tab = b.dataset.tab; if (st.tab !== "producten") st.bewerk = null; render(); window.scrollTo(0, 0);
+}));
+laadAlles();
 </script>
 </body>
 </html>
