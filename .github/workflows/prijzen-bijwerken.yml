@@ -18,4 +18,5 @@ jobs:
           GH_TOKEN: ${{ secrets.MAINFRAME_ACTIONS_TOKEN }}
         run: |
           if [ -z "$GH_TOKEN" ]; then echo "Secret MAINFRAME_ACTIONS_TOKEN ontbreekt"; exit 1; fi
-          gh workflow run boodschappen-week.yml -R Matthijs2603/het-mainframe
+          # via de REST-API, want die vraagt alleen het recht Actions (gh workflow run wil ook de code lezen)
+          gh api -X POST repos/Matthijs2603/het-mainframe/actions/workflows/boodschappen-week.yml/dispatches -f ref=main
