@@ -10,7 +10,7 @@
   "2026-11-13",
   "2026-11-14"
  ],
- "gemaakt_op": "2026-11-08T00:50:08",
+ "gemaakt_op": "2026-11-08T00:52:31",
  "folders": [
   {
    "id": "lidl-hah-wk45-2026",
@@ -1233,7 +1233,7 @@
   {
    "id": "oude-kaas",
    "naam": "Oude kaas",
-   "zoekterm": "oude kaas",
+   "zoekterm": "old amsterdam",
    "voorkeur": "merk",
    "merk": "Old Amsterdam",
    "opmerking": null,
@@ -1243,9 +1243,192 @@
     "lidl": null
    },
    "kandidaten": {
-    "ah": [],
-    "vomar": [],
-    "lidl": []
+    "ah": [
+     {
+      "naam": "AH Volkoren sandwich old amsterdam",
+      "inhoud": "2 stuks",
+      "prijs": 3.5,
+      "per_eenheid": {
+       "prijs": 1.75,
+       "per": "stuk"
+      }
+     },
+     {
+      "naam": "Kwekkeboom Old Amsterdam bitterballen",
+      "inhoud": "250 g",
+      "prijs": 5.39,
+      "per_eenheid": {
+       "prijs": 21.56,
+       "per": "kg"
+      }
+     },
+     {
+      "naam": "Kwekkeboom Old Amsterdam croquetten",
+      "inhoud": "240 g",
+      "prijs": 5.49,
+      "per_eenheid": {
+       "prijs": 22.88,
+       "per": "kg"
+      }
+     },
+     {
+      "naam": "Old Amsterdam Crème",
+      "inhoud": "125 g",
+      "prijs": 2.89,
+      "per_eenheid": {
+       "prijs": 23.12,
+       "per": "kg"
+      }
+     },
+     {
+      "naam": "Old Amsterdam Oud 48+ stuk",
+      "inhoud": "ca. 360 g",
+      "prijs": 8.52,
+      "per_eenheid": {
+       "prijs": 23.67,
+       "per": "kg"
+      }
+     },
+     {
+      "naam": "Old Amsterdam Original 48+ plakken voordeelverpakking",
+      "inhoud": "200 g",
+      "prijs": 4.99,
+      "per_eenheid": {
+       "prijs": 24.95,
+       "per": "kg"
+      }
+     },
+     {
+      "naam": "Old Amsterdam Oud 35+ stuk",
+      "inhoud": "ca. 340 g",
+      "prijs": 8.5,
+      "per_eenheid": {
+       "prijs": 25.0,
+       "per": "kg"
+      }
+     },
+     {
+      "naam": "Old Amsterdam Borrelblokjes voorgesneden",
+      "inhoud": "170 g",
+      "prijs": 4.49,
+      "per_eenheid": {
+       "prijs": 26.41,
+       "per": "kg"
+      }
+     },
+     {
+      "naam": "Old Amsterdam Original 48+ geraspt",
+      "inhoud": "150 g",
+      "prijs": 3.99,
+      "per_eenheid": {
+       "prijs": 26.6,
+       "per": "kg"
+      }
+     },
+     {
+      "naam": "Old Amsterdam Belegen 48+ plakken",
+      "inhoud": "ca. 220 g",
+      "prijs": 5.87,
+      "per_eenheid": {
+       "prijs": 26.68,
+       "per": "kg"
+      }
+     }
+    ],
+    "vomar": [
+     {
+      "naam": "Kwekkeboom Old Amsterdam Jalapeno Bitterballen",
+      "inhoud": "10 stuks",
+      "prijs": 5.25,
+      "per_eenheid": {
+       "prijs": 0.53,
+       "per": "stuk"
+      }
+     },
+     {
+      "naam": "Old Amsterdam Original",
+      "inhoud": "400 gram",
+      "prijs": 5.99,
+      "per_eenheid": {
+       "prijs": 14.97,
+       "per": "kg"
+      }
+     },
+     {
+      "naam": "Old Amsterdam Creme",
+      "inhoud": "125 gram",
+      "prijs": 2.49,
+      "per_eenheid": {
+       "prijs": 19.92,
+       "per": "kg"
+      }
+     },
+     {
+      "naam": "Old Amsterdam 35+ Plak",
+      "inhoud": "100 gram",
+      "prijs": 2.75,
+      "per_eenheid": {
+       "prijs": 27.5,
+       "per": "kg"
+      }
+     },
+     {
+      "naam": "Old Amsterdam 48+ Plak",
+      "inhoud": "100 gram",
+      "prijs": 2.79,
+      "per_eenheid": {
+       "prijs": 27.9,
+       "per": "kg"
+      }
+     },
+     {
+      "naam": "Old Amsterdam Tasty Grill",
+      "inhoud": "140 gram",
+      "prijs": 3.99,
+      "per_eenheid": {
+       "prijs": 28.5,
+       "per": "kg"
+      }
+     }
+    ],
+    "lidl": [
+     {
+      "naam": "Old Amsterdam stuk",
+      "inhoud": "150 g",
+      "prijs": 1.99,
+      "per_eenheid": {
+       "prijs": 13.27,
+       "per": "kg"
+      }
+     },
+     {
+      "naam": "Old Amsterdam plak.",
+      "inhoud": "205 g",
+      "prijs": 4.79,
+      "per_eenheid": {
+       "prijs": 23.37,
+       "per": "kg"
+      }
+     },
+     {
+      "naam": "Old Amsterdam crème",
+      "inhoud": null,
+      "prijs": 1.99,
+      "per_eenheid": null
+     },
+     {
+      "naam": "Old Amsterdam plakken",
+      "inhoud": null,
+      "prijs": 3.49,
+      "per_eenheid": null
+     },
+     {
+      "naam": "Old Amsterdam stuk",
+      "inhoud": null,
+      "prijs": 5.99,
+      "per_eenheid": null
+     }
+    ]
    },
    "gekozen_gevonden": {
     "ah": null,
@@ -1255,65 +1438,282 @@
    "dagen": {
     "2026-11-08": {
      "winkels": {
-      "ah": null,
-      "vomar": null,
-      "lidl": null
+      "ah": {
+       "artikel": "Old Amsterdam 48+ plakken kleinverpakking",
+       "inhoud": "ca. 100 g",
+       "prijs": 1.48,
+       "per_eenheid": {
+        "prijs": 14.8,
+        "per": "kg"
+       },
+       "aanbieding": true,
+       "actie": "2e gratis",
+       "vanaf_aantal": 2,
+       "van": "2026-11-02",
+       "tot": "2026-11-08"
+      },
+      "vomar": {
+       "artikel": "Kwekkeboom Old Amsterdam Jalapeno Bitterballen",
+       "inhoud": "10 stuks",
+       "prijs": 5.25,
+       "per_eenheid": {
+        "prijs": 0.53,
+        "per": "stuk"
+       },
+       "aanbieding": false
+      },
+      "lidl": {
+       "artikel": "Old Amsterdam stuk",
+       "inhoud": "150 g",
+       "prijs": 1.99,
+       "per_eenheid": {
+        "prijs": 13.27,
+        "per": "kg"
+       },
+       "aanbieding": false
+      }
      },
-     "beste": null,
+     "beste": "ah",
      "wacht": null
     },
     "2026-11-09": {
      "winkels": {
-      "ah": null,
-      "vomar": null,
-      "lidl": null
+      "ah": {
+       "artikel": "Kwekkeboom Old Amsterdam bitterballen",
+       "inhoud": "250 g",
+       "prijs": 3.0,
+       "per_eenheid": {
+        "prijs": 12.0,
+        "per": "kg"
+       },
+       "aanbieding": true,
+       "actie": "2 voor 5.99",
+       "vanaf_aantal": 2,
+       "van": "2026-11-09",
+       "tot": "2026-11-15"
+      },
+      "vomar": {
+       "artikel": "Kwekkeboom Old Amsterdam Jalapeno Bitterballen",
+       "inhoud": "10 stuks",
+       "prijs": 5.25,
+       "per_eenheid": {
+        "prijs": 0.53,
+        "per": "stuk"
+       },
+       "aanbieding": false
+      },
+      "lidl": {
+       "artikel": "Old Amsterdam stuk",
+       "inhoud": "150 g",
+       "prijs": 1.99,
+       "per_eenheid": {
+        "prijs": 13.27,
+        "per": "kg"
+       },
+       "aanbieding": false
+      }
      },
-     "beste": null,
+     "beste": "lidl",
      "wacht": null
     },
     "2026-11-10": {
      "winkels": {
-      "ah": null,
-      "vomar": null,
-      "lidl": null
+      "ah": {
+       "artikel": "Kwekkeboom Old Amsterdam bitterballen",
+       "inhoud": "250 g",
+       "prijs": 3.0,
+       "per_eenheid": {
+        "prijs": 12.0,
+        "per": "kg"
+       },
+       "aanbieding": true,
+       "actie": "2 voor 5.99",
+       "vanaf_aantal": 2,
+       "van": "2026-11-09",
+       "tot": "2026-11-15"
+      },
+      "vomar": {
+       "artikel": "Kwekkeboom Old Amsterdam Jalapeno Bitterballen",
+       "inhoud": "10 stuks",
+       "prijs": 5.25,
+       "per_eenheid": {
+        "prijs": 0.53,
+        "per": "stuk"
+       },
+       "aanbieding": false
+      },
+      "lidl": {
+       "artikel": "Old Amsterdam stuk",
+       "inhoud": "150 g",
+       "prijs": 1.99,
+       "per_eenheid": {
+        "prijs": 13.27,
+        "per": "kg"
+       },
+       "aanbieding": false
+      }
      },
-     "beste": null,
+     "beste": "lidl",
      "wacht": null
     },
     "2026-11-11": {
      "winkels": {
-      "ah": null,
-      "vomar": null,
-      "lidl": null
+      "ah": {
+       "artikel": "Kwekkeboom Old Amsterdam bitterballen",
+       "inhoud": "250 g",
+       "prijs": 3.0,
+       "per_eenheid": {
+        "prijs": 12.0,
+        "per": "kg"
+       },
+       "aanbieding": true,
+       "actie": "2 voor 5.99",
+       "vanaf_aantal": 2,
+       "van": "2026-11-09",
+       "tot": "2026-11-15"
+      },
+      "vomar": {
+       "artikel": "Kwekkeboom Old Amsterdam Jalapeno Bitterballen",
+       "inhoud": "10 stuks",
+       "prijs": 5.25,
+       "per_eenheid": {
+        "prijs": 0.53,
+        "per": "stuk"
+       },
+       "aanbieding": false
+      },
+      "lidl": {
+       "artikel": "Old Amsterdam stuk",
+       "inhoud": "150 g",
+       "prijs": 1.99,
+       "per_eenheid": {
+        "prijs": 13.27,
+        "per": "kg"
+       },
+       "aanbieding": false
+      }
      },
-     "beste": null,
+     "beste": "lidl",
      "wacht": null
     },
     "2026-11-12": {
      "winkels": {
-      "ah": null,
-      "vomar": null,
-      "lidl": null
+      "ah": {
+       "artikel": "Kwekkeboom Old Amsterdam bitterballen",
+       "inhoud": "250 g",
+       "prijs": 3.0,
+       "per_eenheid": {
+        "prijs": 12.0,
+        "per": "kg"
+       },
+       "aanbieding": true,
+       "actie": "2 voor 5.99",
+       "vanaf_aantal": 2,
+       "van": "2026-11-09",
+       "tot": "2026-11-15"
+      },
+      "vomar": {
+       "artikel": "Kwekkeboom Old Amsterdam Jalapeno Bitterballen",
+       "inhoud": "10 stuks",
+       "prijs": 5.25,
+       "per_eenheid": {
+        "prijs": 0.53,
+        "per": "stuk"
+       },
+       "aanbieding": false
+      },
+      "lidl": {
+       "artikel": "Old Amsterdam stuk",
+       "inhoud": "150 g",
+       "prijs": 1.99,
+       "per_eenheid": {
+        "prijs": 13.27,
+        "per": "kg"
+       },
+       "aanbieding": false
+      }
      },
-     "beste": null,
+     "beste": "lidl",
      "wacht": null
     },
     "2026-11-13": {
      "winkels": {
-      "ah": null,
-      "vomar": null,
-      "lidl": null
+      "ah": {
+       "artikel": "Kwekkeboom Old Amsterdam bitterballen",
+       "inhoud": "250 g",
+       "prijs": 3.0,
+       "per_eenheid": {
+        "prijs": 12.0,
+        "per": "kg"
+       },
+       "aanbieding": true,
+       "actie": "2 voor 5.99",
+       "vanaf_aantal": 2,
+       "van": "2026-11-09",
+       "tot": "2026-11-15"
+      },
+      "vomar": {
+       "artikel": "Kwekkeboom Old Amsterdam Jalapeno Bitterballen",
+       "inhoud": "10 stuks",
+       "prijs": 5.25,
+       "per_eenheid": {
+        "prijs": 0.53,
+        "per": "stuk"
+       },
+       "aanbieding": false
+      },
+      "lidl": {
+       "artikel": "Old Amsterdam stuk",
+       "inhoud": "150 g",
+       "prijs": 1.99,
+       "per_eenheid": {
+        "prijs": 13.27,
+        "per": "kg"
+       },
+       "aanbieding": false
+      }
      },
-     "beste": null,
+     "beste": "lidl",
      "wacht": null
     },
     "2026-11-14": {
      "winkels": {
-      "ah": null,
-      "vomar": null,
-      "lidl": null
+      "ah": {
+       "artikel": "Kwekkeboom Old Amsterdam bitterballen",
+       "inhoud": "250 g",
+       "prijs": 3.0,
+       "per_eenheid": {
+        "prijs": 12.0,
+        "per": "kg"
+       },
+       "aanbieding": true,
+       "actie": "2 voor 5.99",
+       "vanaf_aantal": 2,
+       "van": "2026-11-09",
+       "tot": "2026-11-15"
+      },
+      "vomar": {
+       "artikel": "Kwekkeboom Old Amsterdam Jalapeno Bitterballen",
+       "inhoud": "10 stuks",
+       "prijs": 5.25,
+       "per_eenheid": {
+        "prijs": 0.53,
+        "per": "stuk"
+       },
+       "aanbieding": false
+      },
+      "lidl": {
+       "artikel": "Old Amsterdam stuk",
+       "inhoud": "150 g",
+       "prijs": 1.99,
+       "per_eenheid": {
+        "prijs": 13.27,
+        "per": "kg"
+       },
+       "aanbieding": false
+      }
      },
-     "beste": null,
+     "beste": "lidl",
      "wacht": null
     }
    }
@@ -10868,6 +11268,196 @@
    "per_eenheid": {
     "prijs": 1.5,
     "per": "l"
+   },
+   "pagina": null,
+   "folder": "ah-bonus"
+  },
+  {
+   "winkel": "ah",
+   "product": "Old Amsterdam 48+ plakken kleinverpakking",
+   "merk": "Old Amsterdam",
+   "omschrijving": null,
+   "inhoud": "ca. 100 g",
+   "prijs": 1.48,
+   "van_prijs": 2.95,
+   "actie": "2e gratis",
+   "voorwaarde": null,
+   "van": "2026-11-02",
+   "tot": "2026-11-08",
+   "per_eenheid": {
+    "prijs": 14.8,
+    "per": "kg"
+   },
+   "pagina": null,
+   "folder": "ah-bonus"
+  },
+  {
+   "winkel": "ah",
+   "product": "Kwekkeboom Old Amsterdam bitterballen",
+   "merk": "Kwekkeboom",
+   "omschrijving": null,
+   "inhoud": "250 g",
+   "prijs": 3.0,
+   "van_prijs": 4.39,
+   "actie": "2 voor 5.99",
+   "voorwaarde": null,
+   "van": "2026-11-09",
+   "tot": "2026-11-15",
+   "per_eenheid": {
+    "prijs": 12.0,
+    "per": "kg"
+   },
+   "pagina": null,
+   "folder": "ah-bonus"
+  },
+  {
+   "winkel": "ah",
+   "product": "Kwekkeboom Mini bites old Amsterdam",
+   "merk": "Kwekkeboom",
+   "omschrijving": null,
+   "inhoud": "255 g",
+   "prijs": 3.0,
+   "van_prijs": 5.29,
+   "actie": "2 voor 5.99",
+   "voorwaarde": null,
+   "van": "2026-11-09",
+   "tot": "2026-11-15",
+   "per_eenheid": {
+    "prijs": 11.76,
+    "per": "kg"
+   },
+   "pagina": null,
+   "folder": "ah-bonus"
+  },
+  {
+   "winkel": "ah",
+   "product": "Kwekkeboom Old Amsterdam jalapeño bitterballen",
+   "merk": "Kwekkeboom",
+   "omschrijving": null,
+   "inhoud": "250 g",
+   "prijs": 3.0,
+   "van_prijs": 5.29,
+   "actie": "2 voor 5.99",
+   "voorwaarde": null,
+   "van": "2026-11-09",
+   "tot": "2026-11-15",
+   "per_eenheid": {
+    "prijs": 12.0,
+    "per": "kg"
+   },
+   "pagina": null,
+   "folder": "ah-bonus"
+  },
+  {
+   "winkel": "ah",
+   "product": "Old Amsterdam Belegen 48+ plakken",
+   "merk": "Old Amsterdam",
+   "omschrijving": null,
+   "inhoud": "ca. 220 g",
+   "prijs": 2.87,
+   "van_prijs": 5.74,
+   "actie": "2e gratis",
+   "voorwaarde": null,
+   "van": "2026-11-02",
+   "tot": "2026-11-08",
+   "per_eenheid": {
+    "prijs": 13.05,
+    "per": "kg"
+   },
+   "pagina": null,
+   "folder": "ah-bonus"
+  },
+  {
+   "winkel": "ah",
+   "product": "Old Amsterdam Oud 48+ plakken",
+   "merk": "Old Amsterdam",
+   "omschrijving": null,
+   "inhoud": "ca. 205 g",
+   "prijs": 2.9,
+   "van_prijs": 5.81,
+   "actie": "2e gratis",
+   "voorwaarde": null,
+   "van": "2026-11-02",
+   "tot": "2026-11-08",
+   "per_eenheid": {
+    "prijs": 14.15,
+    "per": "kg"
+   },
+   "pagina": null,
+   "folder": "ah-bonus"
+  },
+  {
+   "winkel": "ah",
+   "product": "Old Amsterdam Oud 35+ plakken",
+   "merk": "Old Amsterdam",
+   "omschrijving": null,
+   "inhoud": "ca. 210 g",
+   "prijs": 2.96,
+   "van_prijs": 5.93,
+   "actie": "2e gratis",
+   "voorwaarde": null,
+   "van": "2026-11-02",
+   "tot": "2026-11-08",
+   "per_eenheid": {
+    "prijs": 14.1,
+    "per": "kg"
+   },
+   "pagina": null,
+   "folder": "ah-bonus"
+  },
+  {
+   "winkel": "ah",
+   "product": "Old Amsterdam Oud 35+ stuk",
+   "merk": "Old Amsterdam",
+   "omschrijving": null,
+   "inhoud": "ca. 340 g",
+   "prijs": 4.17,
+   "van_prijs": 8.33,
+   "actie": "2e gratis",
+   "voorwaarde": null,
+   "van": "2026-11-02",
+   "tot": "2026-11-08",
+   "per_eenheid": {
+    "prijs": 12.26,
+    "per": "kg"
+   },
+   "pagina": null,
+   "folder": "ah-bonus"
+  },
+  {
+   "winkel": "ah",
+   "product": "Old Amsterdam Oud 48+ stuk",
+   "merk": "Old Amsterdam",
+   "omschrijving": null,
+   "inhoud": "ca. 360 g",
+   "prijs": 4.17,
+   "van_prijs": 8.35,
+   "actie": "2e gratis",
+   "voorwaarde": null,
+   "van": "2026-11-02",
+   "tot": "2026-11-08",
+   "per_eenheid": {
+    "prijs": 11.58,
+    "per": "kg"
+   },
+   "pagina": null,
+   "folder": "ah-bonus"
+  },
+  {
+   "winkel": "ah",
+   "product": "Old Amsterdam Extra Intense 48+ stuk",
+   "merk": "Old Amsterdam",
+   "omschrijving": null,
+   "inhoud": "ca. 360 g",
+   "prijs": 4.7,
+   "van_prijs": 9.39,
+   "actie": "2e gratis",
+   "voorwaarde": null,
+   "van": "2026-11-02",
+   "tot": "2026-11-08",
+   "per_eenheid": {
+    "prijs": 13.06,
+    "per": "kg"
    },
    "pagina": null,
    "folder": "ah-bonus"
