@@ -368,7 +368,7 @@ function formulier(b) {
   f.append(h("label", { for: "f-zoek" }, "Zoekwoord"),
     h("input", { type: "text", id: "f-zoek", name: "zoekterm", value: p.zoekterm, required: true,
       oninput: e => { e.target.dataset.zelf = "1"; } }),
-    h("div", { class: "zacht klein" }, "Waarop we zoeken bij de winkels, zonder merk. Vindt Vomar niets? Draai de woorden dan om, zoals \"yoghurt halfvol\"."));
+    h("div", { class: "zacht klein" }, "Waarop we zoeken bij de winkels, meestal zonder merk. Vindt Vomar niets? Draai de woorden dan om, zoals \"yoghurt halfvol\". Staat het soort niet in de naam (zoals bij Old Amsterdam)? Zoek dan op het merk en kies hieronder per winkel het artikel."));
   f.append(h("label", {}, "Welk merk?"),
     h("div", { class: "keuze" }, ["geen", "huismerk", "merk"].map(v => h("label", {},
       h("input", { type: "radio", name: "voorkeur", value: v, checked: p.voorkeur === v,
