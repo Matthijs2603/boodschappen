@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#2f6b4f">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛒</text></svg>">
+<title>Hoe werkt het?</title>
+<style>
+  :root { --bg: #f6f4ef; --kaart: #ffffff; --tekst: #1f2421; --zacht: #6b716d; --lijn: #e4e0d7;
+          --accent: #2f6b4f; --accent-zacht: #e3efe8; --let-op: #8a5a00; --let-op-bg: #fff4dc; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #121413; --kaart: #1c1f1d; --tekst: #ecefed; --zacht: #9aa19d; --lijn: #2c312e;
+            --accent: #7cc4a0; --accent-zacht: #1f3329; --let-op: #f2c46b; --let-op-bg: #33290f; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--tekst);
+         font: 17px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; -webkit-text-size-adjust: 100%; }
+  main { max-width: 560px; margin: 0 auto; padding: 16px 16px 48px; }
+  a { color: var(--accent); }
+  .terug { display: inline-block; margin-bottom: 8px; font-weight: 600; text-decoration: none; }
+  h1 { font-size: 26px; margin: 4px 0 4px; }
+  h2 { font-size: 19px; margin: 0 0 8px; }
+  .intro { color: var(--zacht); margin: 0 0 16px; }
+  section { background: var(--kaart); border: 1px solid var(--lijn); border-radius: 14px; padding: 16px; margin: 12px 0; }
+  ol, ul { padding-left: 22px; margin: 8px 0; }
+  li { margin: 6px 0; }
+  .tip { background: var(--accent-zacht); border-radius: 10px; padding: 10px 12px; margin-top: 10px; }
+  .let-op { background: var(--let-op-bg); color: var(--let-op); border-radius: 10px; padding: 10px 12px; margin-top: 10px; }
+  .knop { display: inline-block; background: var(--accent-zacht); color: var(--accent); border-radius: 8px; padding: 1px 8px;
+          font-weight: 600; white-space: nowrap; }
+  nav.inhoud a { display: block; padding: 6px 0; text-decoration: none; }
+</style>
+</head>
+<body>
+<main>
+  <a class="terug" href="./">← Terug naar Boodschappen</a>
+  <h1>Hoe werkt het?</h1>
+  <p class="intro">Deze pagina vertelt je bij welke supermarkt in Heiloo (Albert Heijn, Vomar of Lidl) je je boodschappen het voordeligst haalt. Met de aanbiedingen van die week erbij.</p>
+
+  <nav class="inhoud" aria-label="Inhoud">
+    <a href="#beginscherm">1. Zet de pagina op je beginscherm</a>
+    <a href="#lijstje">2. Je boodschappenlijstje</a>
+    <a href="#advies">3. Het advies lezen</a>
+    <a href="#toevoegen">4. Een product toevoegen</a>
+    <a href="#artikel">5. Per winkel het juiste artikel kiezen</a>
+    <a href="#aanbiedingen">6. Zoeken in de aanbiedingen</a>
+    <a href="#weten">Goed om te weten</a>
+    <a href="#hulp">Als iets niet lukt</a>
+  </nav>
+
+  <section id="beginscherm">
+    <h2>1. Zet de pagina op je beginscherm</h2>
+    <p>Dan staat hij tussen je apps en open je hem met één tik.</p>
+    <p><strong>iPhone:</strong></p>
+    <ol>
+      <li>Open de pagina in Safari.</li>
+      <li>Tik onderaan op het deel-icoontje (het vierkantje met een pijltje omhoog).</li>
+      <li>Kies <strong>Zet op beginscherm</strong> en tik op <strong>Voeg toe</strong>.</li>
+    </ol>
+    <p><strong>Android:</strong></p>
+    <ol>
+      <li>Open de pagina in Chrome.</li>
+      <li>Tik rechtsboven op de drie puntjes.</li>
+      <li>Kies <strong>Toevoegen aan startscherm</strong>.</li>
+    </ol>
+  </section>
+
+  <section id="lijstje">
+    <h2>2. Je boodschappenlijstje</h2>
+    <p>Onderaan de pagina zie je drie knoppen: <span class="knop">📝 Lijstje</span>, <span class="knop">🧺 Producten</span> en <span class="knop">🏷️ Aanbiedingen</span>.</p>
+    <ol>
+      <li>Tik op <span class="knop">📝 Lijstje</span>.</li>
+      <li>Kies bovenaan de dag waarop je boodschappen doet. Staat er <strong>Vandaag</strong>, dan hoef je niets te doen.</li>
+      <li>Vink de producten aan die je nodig hebt.</li>
+    </ol>
+    <p>Bij elk product zie je meteen de prijs bij de drie winkels. De goedkoopste is groen.</p>
+    <div class="tip">Je lijstje blijft bewaard op je telefoon. Ben je klaar, tik dan onderaan op <span class="knop">Lijstje leegmaken</span>.</div>
+  </section>
+
+  <section id="advies">
+    <h2>3. Het advies lezen</h2>
+    <p>Zodra je iets aanvinkt, zie je bovenaan wat je waar haalt:</p>
+    <ul>
+      <li><strong>Een gele melding</strong> betekent: wacht nog even. Een product wordt later die week goedkoper. Er staat bij op welke dag, bij welke winkel en hoeveel je bespaart.</li>
+      <li><strong>Een briefje per winkel</strong> met wat je daar haalt en wat het kost. Groene tekst is een aanbieding, met de voorwaarde erbij. Bijvoorbeeld "neem er 2" of "Lidl Plus" (dan moet je de Lidl-app scannen bij de kassa).</li>
+      <li><strong>Alles bij één winkel</strong>: wat je kwijt bent als je alles bij één winkel haalt. Handig als je geen zin hebt in twee winkels, want dan zie je meteen hoeveel het scheelt.</li>
+    </ul>
+  </section>
+
+  <section id="toevoegen">
+    <h2>4. Een product toevoegen</h2>
+    <ol>
+      <li>Tik op <span class="knop">🧺 Producten</span> en dan op <span class="knop">+ Product toevoegen</span>.</li>
+      <li>Vul de <strong>naam</strong> in, bijvoorbeeld "Pindakaas". Het zoekwoord wordt vanzelf ingevuld.</li>
+      <li>Kies bij <strong>Welk merk?</strong>:
+        <ul>
+          <li><strong>Maakt niet uit</strong>: het goedkoopste is prima.</li>
+          <li><strong>Huismerk</strong>: het merk van de winkel zelf.</li>
+          <li><strong>Vast merk</strong>: alleen dat merk, bijvoorbeeld Calvé. Typ het merk eronder.</li>
+        </ul>
+      </li>
+      <li>Tik op <span class="knop">Opslaan</span>.</li>
+    </ol>
+    <p>Na een paar minuten staan de prijzen erbij. De pagina ververst dan vanzelf, je hoeft niets te doen.</p>
+    <div class="tip"><strong>Vindt hij niets?</strong> Probeer een ander zoekwoord. Bij Vomar helpt het vaak om de woorden om te draaien ("yoghurt halfvol" in plaats van "halfvolle yoghurt"). Staat het soort product niet in de naam, zoals bij Old Amsterdam? Zoek dan op het merk.</div>
+  </section>
+
+  <section id="artikel">
+    <h2>5. Per winkel het juiste artikel kiezen</h2>
+    <p>Dit is de belangrijkste stap. Als je niets kiest, neemt de pagina per winkel het goedkoopste wat hij vindt. Dat is soms net iets anders dan je bedoelt, zoals pindakaas met stukjes in plaats van de gewone, of een andere maat.</p>
+    <ol>
+      <li>Tik op <span class="knop">🧺 Producten</span> en bij het product op <span class="knop">Aanpassen</span>.</li>
+      <li>Onderaan staat <strong>Welk artikel per winkel?</strong>. Kies per winkel het artikel dat je altijd koopt. Je ziet de naam, de maat en de prijs.</li>
+      <li>Verkoopt een winkel het niet, of wil je het daar niet halen? Kies dan <strong>Niet bij deze winkel</strong>.</li>
+      <li>Tik op <span class="knop">Opslaan</span>.</li>
+    </ol>
+    <div class="let-op">Zie je bij een product "niet meer gevonden"? Dan heeft de winkel dat artikel niet meer (of het heet anders). Kies dan een ander artikel.</div>
+  </section>
+
+  <section id="aanbiedingen">
+    <h2>6. Zoeken in de aanbiedingen</h2>
+    <p>Tik op <span class="knop">🏷️ Aanbiedingen</span> en typ wat je zoekt, bijvoorbeeld "kaas" of "koffie". Je ziet alle aanbiedingen uit de folders van deze week, met de prijs en tot wanneer ze gelden. Met de knoppen eronder kies je één winkel.</p>
+  </section>
+
+  <section id="weten">
+    <h2>Goed om te weten</h2>
+    <ul>
+      <li>De prijzen worden <strong>elke ochtend</strong> vanzelf bijgewerkt. Bovenaan de pagina staat wanneer voor het laatst.</li>
+      <li>De folders van Lidl en Vomar voor <strong>volgende week</strong> verschijnen meestal pas halverwege de week. Daarna ziet de pagina ook de aanbiedingen van na het weekend.</li>
+      <li>Aanbiedingen van <strong>Albert Heijn</strong> worden alleen opgezocht voor de producten in je lijst, niet voor alles.</li>
+      <li>Het zijn de landelijke prijzen. Heel af en toe wijkt een winkel in Heiloo af.</li>
+      <li>Je lijstje staat alleen op jouw telefoon. De producten en je keuzes per winkel zijn wel gedeeld met Matthijs.</li>
+    </ul>
+  </section>
+
+  <section id="hulp">
+    <h2>Als iets niet lukt</h2>
+    <ul>
+      <li><strong>Je ziet geen knop "+ Product toevoegen"</strong>, of er staat "De sleutel werkt niet": de telefoon moet opnieuw worden ingesteld. Vraag het Matthijs.</li>
+      <li><strong>Er staat "Deze gegevens zijn verouderd"</strong>: de update van vanochtend is niet gelukt. Matthijs krijgt daar vanzelf een mail over.</li>
+      <li><strong>Een prijs klopt niet</strong>: laat het Matthijs weten, met het product en de winkel erbij.</li>
+    </ul>
+  </section>
+
+  <a class="terug" href="./">← Terug naar Boodschappen</a>
+</main>
+</body>
+</html>
