@@ -10,7 +10,7 @@
   "2026-11-14",
   "2026-11-15"
  ],
- "gemaakt_op": "2026-11-09T13:27:24",
+ "gemaakt_op": "2026-11-09T18:25:36",
  "folders": [
   {
    "id": "lidl-hah-wk46-2026",
@@ -1415,14 +1415,18 @@
     "2026-11-09": {
      "winkels": {
       "ah": {
-       "artikel": "AH Volkoren sandwich old amsterdam",
-       "inhoud": "2 stuks",
-       "prijs": 3.5,
+       "artikel": "Kwekkeboom Old Amsterdam bitterballen",
+       "inhoud": "250 g",
+       "prijs": 3.0,
        "per_eenheid": {
-        "prijs": 1.75,
-        "per": "stuk"
+        "prijs": 12.0,
+        "per": "kg"
        },
-       "aanbieding": false
+       "aanbieding": true,
+       "actie": "2 voor 5.99",
+       "vanaf_aantal": 2,
+       "van": "2026-11-09",
+       "tot": "2026-11-15"
       },
       "vomar": {
        "artikel": "Kwekkeboom Old Amsterdam Jalapeno Bitterballen",
@@ -1451,14 +1455,18 @@
     "2026-11-10": {
      "winkels": {
       "ah": {
-       "artikel": "AH Volkoren sandwich old amsterdam",
-       "inhoud": "2 stuks",
-       "prijs": 3.5,
+       "artikel": "Kwekkeboom Old Amsterdam bitterballen",
+       "inhoud": "250 g",
+       "prijs": 3.0,
        "per_eenheid": {
-        "prijs": 1.75,
-        "per": "stuk"
+        "prijs": 12.0,
+        "per": "kg"
        },
-       "aanbieding": false
+       "aanbieding": true,
+       "actie": "2 voor 5.99",
+       "vanaf_aantal": 2,
+       "van": "2026-11-09",
+       "tot": "2026-11-15"
       },
       "vomar": {
        "artikel": "Kwekkeboom Old Amsterdam Jalapeno Bitterballen",
@@ -1487,14 +1495,18 @@
     "2026-11-11": {
      "winkels": {
       "ah": {
-       "artikel": "AH Volkoren sandwich old amsterdam",
-       "inhoud": "2 stuks",
-       "prijs": 3.5,
+       "artikel": "Kwekkeboom Old Amsterdam bitterballen",
+       "inhoud": "250 g",
+       "prijs": 3.0,
        "per_eenheid": {
-        "prijs": 1.75,
-        "per": "stuk"
+        "prijs": 12.0,
+        "per": "kg"
        },
-       "aanbieding": false
+       "aanbieding": true,
+       "actie": "2 voor 5.99",
+       "vanaf_aantal": 2,
+       "van": "2026-11-09",
+       "tot": "2026-11-15"
       },
       "vomar": {
        "artikel": "Kwekkeboom Old Amsterdam Jalapeno Bitterballen",
@@ -1523,14 +1535,18 @@
     "2026-11-12": {
      "winkels": {
       "ah": {
-       "artikel": "AH Volkoren sandwich old amsterdam",
-       "inhoud": "2 stuks",
-       "prijs": 3.5,
+       "artikel": "Kwekkeboom Old Amsterdam bitterballen",
+       "inhoud": "250 g",
+       "prijs": 3.0,
        "per_eenheid": {
-        "prijs": 1.75,
-        "per": "stuk"
+        "prijs": 12.0,
+        "per": "kg"
        },
-       "aanbieding": false
+       "aanbieding": true,
+       "actie": "2 voor 5.99",
+       "vanaf_aantal": 2,
+       "van": "2026-11-09",
+       "tot": "2026-11-15"
       },
       "vomar": {
        "artikel": "Kwekkeboom Old Amsterdam Jalapeno Bitterballen",
@@ -1559,14 +1575,18 @@
     "2026-11-13": {
      "winkels": {
       "ah": {
-       "artikel": "AH Volkoren sandwich old amsterdam",
-       "inhoud": "2 stuks",
-       "prijs": 3.5,
+       "artikel": "Kwekkeboom Old Amsterdam bitterballen",
+       "inhoud": "250 g",
+       "prijs": 3.0,
        "per_eenheid": {
-        "prijs": 1.75,
-        "per": "stuk"
+        "prijs": 12.0,
+        "per": "kg"
        },
-       "aanbieding": false
+       "aanbieding": true,
+       "actie": "2 voor 5.99",
+       "vanaf_aantal": 2,
+       "van": "2026-11-09",
+       "tot": "2026-11-15"
       },
       "vomar": {
        "artikel": "Kwekkeboom Old Amsterdam Jalapeno Bitterballen",
@@ -1595,14 +1615,18 @@
     "2026-11-14": {
      "winkels": {
       "ah": {
-       "artikel": "AH Volkoren sandwich old amsterdam",
-       "inhoud": "2 stuks",
-       "prijs": 3.5,
+       "artikel": "Kwekkeboom Old Amsterdam bitterballen",
+       "inhoud": "250 g",
+       "prijs": 3.0,
        "per_eenheid": {
-        "prijs": 1.75,
-        "per": "stuk"
+        "prijs": 12.0,
+        "per": "kg"
        },
-       "aanbieding": false
+       "aanbieding": true,
+       "actie": "2 voor 5.99",
+       "vanaf_aantal": 2,
+       "van": "2026-11-09",
+       "tot": "2026-11-15"
       },
       "vomar": {
        "artikel": "Kwekkeboom Old Amsterdam Jalapeno Bitterballen",
@@ -1631,14 +1655,18 @@
     "2026-11-15": {
      "winkels": {
       "ah": {
-       "artikel": "AH Volkoren sandwich old amsterdam",
-       "inhoud": "2 stuks",
-       "prijs": 3.5,
+       "artikel": "Kwekkeboom Old Amsterdam bitterballen",
+       "inhoud": "250 g",
+       "prijs": 3.0,
        "per_eenheid": {
-        "prijs": 1.75,
-        "per": "stuk"
+        "prijs": 12.0,
+        "per": "kg"
        },
-       "aanbieding": false
+       "aanbieding": true,
+       "actie": "2 voor 5.99",
+       "vanaf_aantal": 2,
+       "van": "2026-11-09",
+       "tot": "2026-11-15"
       },
       "vomar": {
        "artikel": "Kwekkeboom Old Amsterdam Jalapeno Bitterballen",
@@ -8025,9 +8053,64 @@
    },
    "pagina": 44,
    "folder": "vomar-online-weekfolder-week-46"
+  },
+  {
+   "winkel": "ah",
+   "product": "Kwekkeboom Old Amsterdam bitterballen",
+   "merk": "Kwekkeboom",
+   "omschrijving": null,
+   "inhoud": "250 g",
+   "prijs": 3.0,
+   "van_prijs": 4.39,
+   "actie": "2 voor 5.99",
+   "voorwaarde": null,
+   "van": "2026-11-09",
+   "tot": "2026-11-15",
+   "per_eenheid": {
+    "prijs": 12.0,
+    "per": "kg"
+   },
+   "pagina": null,
+   "folder": "ah-bonus"
+  },
+  {
+   "winkel": "ah",
+   "product": "Kwekkeboom Mini bites old Amsterdam",
+   "merk": "Kwekkeboom",
+   "omschrijving": null,
+   "inhoud": "255 g",
+   "prijs": 3.0,
+   "van_prijs": 5.29,
+   "actie": "2 voor 5.99",
+   "voorwaarde": null,
+   "van": "2026-11-09",
+   "tot": "2026-11-15",
+   "per_eenheid": {
+    "prijs": 11.76,
+    "per": "kg"
+   },
+   "pagina": null,
+   "folder": "ah-bonus"
+  },
+  {
+   "winkel": "ah",
+   "product": "Kwekkeboom Old Amsterdam jalapeño bitterballen",
+   "merk": "Kwekkeboom",
+   "omschrijving": null,
+   "inhoud": "250 g",
+   "prijs": 3.0,
+   "van_prijs": 5.29,
+   "actie": "2 voor 5.99",
+   "voorwaarde": null,
+   "van": "2026-11-09",
+   "tot": "2026-11-15",
+   "per_eenheid": {
+    "prijs": 12.0,
+    "per": "kg"
+   },
+   "pagina": null,
+   "folder": "ah-bonus"
   }
  ],
- "fouten": {
-  "ah_bonus": "HTTP Error 404: Not Found"
- }
+ "fouten": {}
 }
