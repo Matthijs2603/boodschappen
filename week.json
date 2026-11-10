@@ -1,16 +1,16 @@
 {
- "datum": "2026-11-09",
- "tot": "2026-11-16",
+ "datum": "2026-11-10",
+ "tot": "2026-11-17",
  "dagen": [
-  "2026-11-09",
   "2026-11-10",
   "2026-11-11",
   "2026-11-12",
   "2026-11-13",
   "2026-11-14",
-  "2026-11-15"
+  "2026-11-15",
+  "2026-11-16"
  ],
- "gemaakt_op": "2026-11-09T18:25:36",
+ "gemaakt_op": "2026-11-10T13:02:01",
  "folders": [
   {
    "id": "lidl-hah-wk46-2026",
@@ -88,33 +88,6 @@
     "lidl": null
    },
    "dagen": {
-    "2026-11-09": {
-     "winkels": {
-      "ah": {
-       "artikel": "Kellogg's Coco pops chocos",
-       "inhoud": "330 g",
-       "prijs": 3.69,
-       "per_eenheid": {
-        "prijs": 11.18,
-        "per": "kg"
-       },
-       "aanbieding": false
-      },
-      "vomar": {
-       "artikel": "Kellogg's Chocos",
-       "inhoud": "330 gram",
-       "prijs": 3.49,
-       "per_eenheid": {
-        "prijs": 10.58,
-        "per": "kg"
-       },
-       "aanbieding": false
-      },
-      "lidl": null
-     },
-     "beste": "vomar",
-     "wacht": null
-    },
     "2026-11-10": {
      "winkels": {
       "ah": {
@@ -251,6 +224,33 @@
      "wacht": null
     },
     "2026-11-15": {
+     "winkels": {
+      "ah": {
+       "artikel": "Kellogg's Coco pops chocos",
+       "inhoud": "330 g",
+       "prijs": 3.69,
+       "per_eenheid": {
+        "prijs": 11.18,
+        "per": "kg"
+       },
+       "aanbieding": false
+      },
+      "vomar": {
+       "artikel": "Kellogg's Chocos",
+       "inhoud": "330 gram",
+       "prijs": 3.49,
+       "per_eenheid": {
+        "prijs": 10.58,
+        "per": "kg"
+       },
+       "aanbieding": false
+      },
+      "lidl": null
+     },
+     "beste": "vomar",
+     "wacht": null
+    },
+    "2026-11-16": {
      "winkels": {
       "ah": {
        "artikel": "Kellogg's Coco pops chocos",
@@ -479,50 +479,6 @@
     "lidl": null
    },
    "dagen": {
-    "2026-11-09": {
-     "winkels": {
-      "ah": {
-       "artikel": "Calvé Pindakaas pot",
-       "inhoud": "1000 g",
-       "prijs": 7.19,
-       "per_eenheid": {
-        "prijs": 7.19,
-        "per": "kg"
-       },
-       "aanbieding": false
-      },
-      "vomar": {
-       "artikel": "Calve Pindakaas",
-       "inhoud": "650 gram",
-       "prijs": 3.79,
-       "per_eenheid": {
-        "prijs": 5.83,
-        "per": "kg"
-       },
-       "aanbieding": false
-      },
-      "lidl": {
-       "artikel": "Calvé pindakaas",
-       "inhoud": "650 g",
-       "prijs": 4.35,
-       "per_eenheid": {
-        "prijs": 6.69,
-        "per": "kg"
-       },
-       "aanbieding": false
-      }
-     },
-     "beste": "vomar",
-     "wacht": {
-      "dag": "2026-11-12",
-      "winkel": "lidl",
-      "artikel": "Calvé Pindakaas",
-      "prijs": 3.49,
-      "actie": "-22%",
-      "voorwaarde": null,
-      "besparing": 0.3
-     }
-    },
     "2026-11-10": {
      "winkels": {
       "ah": {
@@ -769,6 +725,42 @@
       }
      },
      "beste": "lidl",
+     "wacht": null
+    },
+    "2026-11-16": {
+     "winkels": {
+      "ah": {
+       "artikel": "Calvé Pindakaas pot",
+       "inhoud": "1000 g",
+       "prijs": 7.19,
+       "per_eenheid": {
+        "prijs": 7.19,
+        "per": "kg"
+       },
+       "aanbieding": false
+      },
+      "vomar": {
+       "artikel": "Calve Pindakaas",
+       "inhoud": "650 gram",
+       "prijs": 3.79,
+       "per_eenheid": {
+        "prijs": 5.83,
+        "per": "kg"
+       },
+       "aanbieding": false
+      },
+      "lidl": {
+       "artikel": "Calvé pindakaas",
+       "inhoud": "650 g",
+       "prijs": 4.35,
+       "per_eenheid": {
+        "prijs": 6.69,
+        "per": "kg"
+       },
+       "aanbieding": false
+      }
+     },
+     "beste": "vomar",
      "wacht": null
     }
    }
@@ -952,42 +944,6 @@
     "lidl": null
    },
    "dagen": {
-    "2026-11-09": {
-     "winkels": {
-      "ah": {
-       "artikel": "De Zaanse Hoeve Halfvolle yoghurt",
-       "inhoud": "1 l",
-       "prijs": 1.19,
-       "per_eenheid": {
-        "prijs": 1.19,
-        "per": "l"
-       },
-       "aanbieding": false
-      },
-      "vomar": {
-       "artikel": "Bio+ Yoghurt Halfvol",
-       "inhoud": "1000 ml",
-       "prijs": 1.59,
-       "per_eenheid": {
-        "prijs": 1.59,
-        "per": "l"
-       },
-       "aanbieding": false
-      },
-      "lidl": {
-       "artikel": "Halfvolle yoghurt",
-       "inhoud": "1 L",
-       "prijs": 0.94,
-       "per_eenheid": {
-        "prijs": 0.94,
-        "per": "l"
-       },
-       "aanbieding": false
-      }
-     },
-     "beste": "lidl",
-     "wacht": null
-    },
     "2026-11-10": {
      "winkels": {
       "ah": {
@@ -1169,6 +1125,42 @@
      "wacht": null
     },
     "2026-11-15": {
+     "winkels": {
+      "ah": {
+       "artikel": "De Zaanse Hoeve Halfvolle yoghurt",
+       "inhoud": "1 l",
+       "prijs": 1.19,
+       "per_eenheid": {
+        "prijs": 1.19,
+        "per": "l"
+       },
+       "aanbieding": false
+      },
+      "vomar": {
+       "artikel": "Bio+ Yoghurt Halfvol",
+       "inhoud": "1000 ml",
+       "prijs": 1.59,
+       "per_eenheid": {
+        "prijs": 1.59,
+        "per": "l"
+       },
+       "aanbieding": false
+      },
+      "lidl": {
+       "artikel": "Halfvolle yoghurt",
+       "inhoud": "1 L",
+       "prijs": 0.94,
+       "per_eenheid": {
+        "prijs": 0.94,
+        "per": "l"
+       },
+       "aanbieding": false
+      }
+     },
+     "beste": "lidl",
+     "wacht": null
+    },
+    "2026-11-16": {
      "winkels": {
       "ah": {
        "artikel": "De Zaanse Hoeve Halfvolle yoghurt",
@@ -1412,46 +1404,6 @@
     "lidl": null
    },
    "dagen": {
-    "2026-11-09": {
-     "winkels": {
-      "ah": {
-       "artikel": "Kwekkeboom Old Amsterdam bitterballen",
-       "inhoud": "250 g",
-       "prijs": 3.0,
-       "per_eenheid": {
-        "prijs": 12.0,
-        "per": "kg"
-       },
-       "aanbieding": true,
-       "actie": "2 voor 5.99",
-       "vanaf_aantal": 2,
-       "van": "2026-11-09",
-       "tot": "2026-11-15"
-      },
-      "vomar": {
-       "artikel": "Kwekkeboom Old Amsterdam Jalapeno Bitterballen",
-       "inhoud": "10 stuks",
-       "prijs": 5.25,
-       "per_eenheid": {
-        "prijs": 0.53,
-        "per": "stuk"
-       },
-       "aanbieding": false
-      },
-      "lidl": {
-       "artikel": "Old Amsterdam stuk",
-       "inhoud": "150 g",
-       "prijs": 1.99,
-       "per_eenheid": {
-        "prijs": 13.27,
-        "per": "kg"
-       },
-       "aanbieding": false
-      }
-     },
-     "beste": "lidl",
-     "wacht": null
-    },
     "2026-11-10": {
      "winkels": {
       "ah": {
@@ -1667,6 +1619,42 @@
        "vanaf_aantal": 2,
        "van": "2026-11-09",
        "tot": "2026-11-15"
+      },
+      "vomar": {
+       "artikel": "Kwekkeboom Old Amsterdam Jalapeno Bitterballen",
+       "inhoud": "10 stuks",
+       "prijs": 5.25,
+       "per_eenheid": {
+        "prijs": 0.53,
+        "per": "stuk"
+       },
+       "aanbieding": false
+      },
+      "lidl": {
+       "artikel": "Old Amsterdam stuk",
+       "inhoud": "150 g",
+       "prijs": 1.99,
+       "per_eenheid": {
+        "prijs": 13.27,
+        "per": "kg"
+       },
+       "aanbieding": false
+      }
+     },
+     "beste": "lidl",
+     "wacht": null
+    },
+    "2026-11-16": {
+     "winkels": {
+      "ah": {
+       "artikel": "AH Volkoren sandwich old amsterdam",
+       "inhoud": "2 stuks",
+       "prijs": 3.5,
+       "per_eenheid": {
+        "prijs": 1.75,
+        "per": "stuk"
+       },
+       "aanbieding": false
       },
       "vomar": {
        "artikel": "Kwekkeboom Old Amsterdam Jalapeno Bitterballen",
@@ -6698,25 +6686,6 @@
     "per": "kg"
    },
    "pagina": 23,
-   "folder": "vomar-online-weekfolder-week-46"
-  },
-  {
-   "winkel": "vomar",
-   "product": "Verse Witte of Volkoren Hotelkadetten",
-   "merk": null,
-   "omschrijving": "witte of volkoren hotelkadetten bolletjes",
-   "inhoud": "zak 12 stuks",
-   "prijs": 0.99,
-   "van_prijs": 1.49,
-   "actie": "OP=OP",
-   "voorwaarde": "Alleen op maandag",
-   "van": "2026-11-09",
-   "tot": "2026-11-09",
-   "per_eenheid": {
-    "prijs": 0.08,
-    "per": "stuk"
-   },
-   "pagina": 24,
    "folder": "vomar-online-weekfolder-week-46"
   },
   {
